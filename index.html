@@ -47,7 +47,7 @@
         <p class="hero__hook">Entrenar sin registro es <em>adivinar.</em></p>
         <p class="hero__lead">Profesor de Educación Física. Te acompaño en la sala y en mi app, para que sepas exactamente cómo avanzas.</p>
         <div class="hero__actions">
-          <a href="#contacto" class="btn btn--dark">Quiero entrenar contigo</a>
+          <a href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20me%20gustar%C3%ADa%20entrenar%20contigo." class="btn btn--dark" target="_blank" rel="noopener">Quiero entrenar contigo</a>
           <a href="#metodo" class="btn btn--ghost">Cómo trabajo</a>
         </div>
       </div>
@@ -173,7 +173,7 @@
             <li>Composición corporal</li>
             <li>Acompañamiento en cada sesión</li>
           </ul>
-          <a href="#contacto" class="card__link">Quiero entrenar contigo →</a>
+          <a href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20me%20gustar%C3%ADa%20entrenar%20contigo." class="card__link" target="_blank" rel="noopener">Quiero entrenar contigo →</a>
         </article>
 
         <article class="card card--dark">
@@ -413,10 +413,15 @@
     };
     requestAnimationFrame(appLoop);
     // Ciclo del método: también siempre en marcha
-    let lastC = 0;
+    // Solo avanza mientras el círculo está en pantalla; al aparecer parte desde el paso 1
+    let lastC = 0, cycleOn = false;
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !cycleOn) { mT = 0; drawCycle(); }
+      cycleOn = e.isIntersecting;
+    }, { threshold: .5 }).observe(cycle);
     const cycleLoop = now => {
       const dt = Math.min(100, now - (lastC || now)); lastC = now;
-      mT += dt; drawCycle();
+      if (cycleOn) { mT += dt; drawCycle(); }
       requestAnimationFrame(cycleLoop);
     };
     requestAnimationFrame(cycleLoop);
