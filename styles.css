@@ -130,10 +130,11 @@ em { font-style: italic; color: var(--stone); }
   font-size: 13px; letter-spacing: .32em; text-transform: uppercase; color: var(--stone);
 }
 .hero__foot .dot { color: var(--concrete); }
-.hero__quote {
-  margin-left: auto;
-  font-family: var(--serif); font-size: 22px; letter-spacing: 0; text-transform: none; color: var(--stone);
-}
+.hero__where { margin-left: auto; display: grid; gap: 10px; text-transform: none; letter-spacing: 0; }
+.hero__where p { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.hero__tag { width: 92px; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--concrete); }
+.hero__where em { font-family: var(--serif); font-size: 21px; color: var(--ink); }
+.hero__note { font-size: 13px; letter-spacing: .04em; color: var(--stone); }
 
 /* ---------- Stats ---------- */
 .stats {
@@ -383,7 +384,9 @@ em { font-style: italic; color: var(--stone); }
 
   .hero { grid-template-columns: 1fr; grid-template-rows: auto; min-height: auto; padding-top: 32px; gap: 40px; }
   .hero__visual { order: -1; justify-self: center; width: min(82%, 360px); }
-  .hero__quote { margin-left: 0; width: 100%; }
+  .hero__where { margin-left: 0; width: 100%; margin-top: 8px; }
+  .hero__where p { gap: 4px 12px; }
+  .hero__note { width: 100%; padding-left: 104px; margin-top: -2px; }
 
   .stats { grid-template-columns: 1fr; gap: 28px; padding: 48px var(--pad); }
   .stat { justify-content: flex-start; }

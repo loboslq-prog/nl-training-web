@@ -59,7 +59,10 @@
         <span>Fuerza</span><span class="dot">·</span>
         <span>Movimiento</span><span class="dot">·</span>
         <span>Hábitos</span>
-        <em class="hero__quote">Gimnasios Smart Fit · Entrenamiento online</em>
+        <div class="hero__where">
+          <p><span class="hero__tag">Presencial</span><em>Gimnasio Smart Fit</em><span class="hero__note">Trabajo en Smart Fit Portugal</span></p>
+          <p><span class="hero__tag">Online</span><em>Entrenamiento online</em><span class="hero__note">Con mi app, desde cualquier lugar</span></p>
+        </div>
       </div>
     </section>
 
@@ -341,13 +344,6 @@
     document.querySelectorAll('[data-count]').forEach(el => countIo.observe(el));
 
     const NS = 'http://www.w3.org/2000/svg';
-    // Corre un callback por frame solo mientras el elemento está en pantalla
-    const whenVisible = (el, fn) => {
-      let on = false, last = 0;
-      new IntersectionObserver(([e]) => { on = e.isIntersecting; }, { threshold: .25 }).observe(el);
-      const loop = now => { const dt = Math.min(100, now - (last || now)); last = now; if (on) fn(dt); requestAnimationFrame(loop); };
-      requestAnimationFrame(loop);
-    };
     const swapText = (el, text) => { el.textContent = text; el.classList.remove('swap'); void el.offsetWidth; el.classList.add('swap'); };
 
     // --- Ciclo del método: el punto viaja de etapa en etapa y el centro explica cada una ---
@@ -367,32 +363,28 @@
     const cNum = document.querySelector('.cycle__num'), cName = document.querySelector('.cycle__name'),
           cText = document.querySelector('.cycle__text'), cKeys = document.querySelector('.cycle__keys');
     const cFill = cycle.querySelector('.cycle__fill'), cDot = cycle.querySelector('.cycle__dot');
-    let mStep = 0, mT = 0;
+    const STEP = 4200;               // ms que tarda el punto en ir de una etapa a la siguiente
+    let mStep = -1, mT = 0;
     const showStep = i => {
+      if (i === mStep) return;
       mStep = i;
       nodes.forEach((g, k) => { g.classList.toggle('is-done', k <= i); g.classList.toggle('is-current', k === i); });
       cNum.textContent = `0${i + 1} / 0${N}`;
       swapText(cName, mData[i].title); swapText(cText, mData[i].text); swapText(cKeys, mData[i].keys);
     };
-    const placeDot = a => { cDot.setAttribute('cx', C + R * Math.cos(a)); cDot.setAttribute('cy', C + R * Math.sin(a)); };
-    const ease = x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
     const drawCycle = () => {
-      const moving = mT > HOLD ? ease(Math.min(1, (mT - HOLD) / MOVE)) : 0;
-      const pos = mStep + moving;
-      placeDot(ang(0) + pos * 2 * Math.PI / N);
+      const pos = (mT / STEP) % N;                       // avance continuo alrededor del círculo
+      const a = ang(0) + pos * 2 * Math.PI / N;
+      cDot.setAttribute('cx', C + R * Math.cos(a)); cDot.setAttribute('cy', C + R * Math.sin(a));
       cFill.style.strokeDashoffset = 1 - pos / N;
+      showStep(Math.floor(pos + 0.02) % N);
     };
     nodes.forEach((g, i) => {
-      const go = () => { mT = 0; showStep(i); drawCycle(); };
+      const go = () => { mT = i * STEP; drawCycle(); };
       g.addEventListener('click', go);
       g.addEventListener('keydown', e => (e.key === 'Enter' || e.key === ' ') && go());
     });
-    showStep(0); drawCycle();
-    if (!reduce) whenVisible(cycle, dt => {
-      mT += dt;
-      if (mT >= HOLD + MOVE) { mT = 0; showStep((mStep + 1) % N); }
-      drawCycle();
-    });
+    drawCycle();
 
     // --- App: las pantallas cambian solas y el texto acompaña debajo ---
     const screens = [...document.querySelectorAll('.app__device img')];
@@ -408,11 +400,24 @@
       swapText(aNum, aData[i].num); swapText(aTitle, aData[i].title); swapText(aText, aData[i].text);
     };
     aDots.forEach((d, i) => d.addEventListener('click', () => { aT = 0; showApp(i); }));
-    if (!reduce) whenVisible(document.querySelector('.app__stage'), dt => {
+    // Siempre en marcha, como el diagrama final
+    let lastA = 0;
+    const appLoop = now => {
+      const dt = Math.min(100, now - (lastA || now)); lastA = now;
       aT += dt;
       aDots[aStep].style.setProperty('--p', Math.min(1, aT / APP_HOLD));
       if (aT >= APP_HOLD) { aT = 0; showApp((aStep + 1) % aData.length); }
-    });
+      requestAnimationFrame(appLoop);
+    };
+    requestAnimationFrame(appLoop);
+    // Ciclo del método: también siempre en marcha
+    let lastC = 0;
+    const cycleLoop = now => {
+      const dt = Math.min(100, now - (lastC || now)); lastC = now;
+      mT += dt; drawCycle();
+      requestAnimationFrame(cycleLoop);
+    };
+    requestAnimationFrame(cycleLoop);
 
     // --- Sistema: puntos que viajan por las flechas ---
     const sys = document.querySelector('.system__diagram');
