@@ -55,11 +55,11 @@
     <!-- ============ STATS ============ -->
     <section class="stats" aria-label="Trayectoria">
       <div class="stat">
-        <span class="stat__num">+8</span>
+        <span class="stat__num" data-count="8">+8</span>
         <span class="stat__label">años<br>entrenando personas</span>
       </div>
       <div class="stat">
-        <span class="stat__num">+150</span>
+        <span class="stat__num" data-count="150">+150</span>
         <span class="stat__label">alumnos<br>acompañados</span>
       </div>
       <div class="stat">
@@ -115,7 +115,6 @@
           <h3 class="card__title">Entrenamiento <em>personal</em></h3>
           <p>Entrenamiento individual y presencial en Smart Fit Portugal, completamente adaptado a ti: tus objetivos, tu técnica y tu progreso.</p>
           <ul class="card__list">
-            <li>Evaluación inicial</li>
             <li>Técnica y fuerza</li>
             <li>Composición corporal</li>
             <li>Acompañamiento en cada sesión</li>
@@ -128,7 +127,6 @@
           <h3 class="card__title">Entrenamiento <em>online</em></h3>
           <p>Un programa personalizado en mi app NL Training, con estructura y seguimiento, estés donde estés.</p>
           <ul class="card__list">
-            <li>Evaluación inicial</li>
             <li>Programa personalizado en la app</li>
             <li>Comentarios y ajustes de tu entrenador</li>
             <li>Registro del progreso</li>
@@ -147,13 +145,6 @@
           </ul>
           <a href="#contacto" class="card__link">Quiero saber más →</a>
         </article>
-      </div>
-
-      <div class="pillars">
-        <div class="pillar"><span class="star">★</span>Movimiento y<br>prevención de lesiones</div>
-        <div class="pillar"><span class="star">★</span>Fuerza y<br>composición corporal</div>
-        <div class="pillar"><span class="star">★</span>Hábitos que<br>se sostienen</div>
-        <div class="pillar"><span class="star">★</span>Progresión con<br>estructura</div>
       </div>
     </section>
 
@@ -258,6 +249,28 @@
     };
     addEventListener('scroll', updateWa, { passive: true });
     updateWa();
+
+    // Aparición en cascada: tarjetas, fotos y pantallas de la app
+    document.querySelectorAll('.cards, .gallery__grid, .app__screens').forEach(group =>
+      [...group.children].forEach((el, i) => { el.classList.add('stagger'); el.style.setProperty('--i', i); })
+    );
+
+    // Números que cuentan desde 0
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const countIo = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      countIo.unobserve(e.target);
+      const el = e.target, end = +el.dataset.count, start = performance.now(), dur = 1600;
+      if (reduce) return;
+      const tick = now => {
+        const t = Math.min(1, (now - start) / dur), eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = '+' + Math.round(end * eased);
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      el.textContent = '+0';
+      requestAnimationFrame(tick);
+    }), { threshold: 0.6 });
+    document.querySelectorAll('[data-count]').forEach(el => countIo.observe(el));
   </script>
 </body>
 </html>
