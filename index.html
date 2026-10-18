@@ -14,13 +14,14 @@
 
   <!-- ============ NAV ============ -->
   <header class="nav">
-    <a href="#inicio" class="nav__logo" aria-label="Nicolás Lobos, volver al inicio">N<span>L</span></a>
+    <a href="#inicio" class="brand" aria-label="NL Training, volver al inicio"><span class="brand__mark">NL</span><span class="brand__name">NL Training</span></a>
     <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span>
     </button>
     <nav class="nav__links">
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#servicios">Servicios</a>
+      <a href="#app">App</a>
       <a href="#contacto" class="nav__cta">Contacto</a>
     </nav>
   </header>
@@ -29,7 +30,7 @@
     <!-- ============ HERO ============ -->
     <section id="inicio" class="hero">
       <div class="hero__text">
-        <p class="eyebrow"><span class="rule"></span>Entrenador personal · Santiago</p>
+        <p class="eyebrow"><span class="rule"></span>Entrenador personal · Presencial y online</p>
         <h1 class="display">
           <span class="display__solid">NICOLÁS</span>
           <em class="display__soft">LOBOS</em>
@@ -125,14 +126,14 @@
         <article class="card card--dark">
           <span class="card__num">02</span>
           <h3 class="card__title">Entrenamiento <em>online</em></h3>
-          <p>Un programa personalizado para entrenar con estructura y seguimiento, estés donde estés.</p>
+          <p>Un programa personalizado en mi app NL Training, con estructura y seguimiento, estés donde estés.</p>
           <ul class="card__list">
             <li>Evaluación inicial</li>
-            <li>Programa personalizado</li>
-            <li>Seguimiento y ajustes</li>
+            <li>Programa personalizado en la app</li>
+            <li>Comentarios y ajustes de tu entrenador</li>
             <li>Registro del progreso</li>
           </ul>
-          <a href="#contacto" class="card__link">Conocer entrenamiento online →</a>
+          <a href="#app" class="card__link">Conocer la app →</a>
         </article>
 
         <article class="card">
@@ -154,6 +155,34 @@
         <div class="pillar"><span class="star">★</span>Hábitos que<br>se sostienen</div>
         <div class="pillar"><span class="star">★</span>Progresión con<br>estructura</div>
       </div>
+    </section>
+
+    <!-- ============ APP ============ -->
+    <section id="app" class="app section">
+      <p class="eyebrow"><span class="rule"></span>App NL Training</p>
+      <div class="app__head">
+        <h2 class="heading">Tu entrenador piensa.<br><em>NL Training te ayuda a hacerlo.</em></h2>
+        <p class="app__lead">Desarrollé mi propia app para que entrenes con estructura dentro y fuera del gimnasio: tu rutina, tus clases y tu progreso en un solo lugar. Entrenes conmigo presencial u online.</p>
+      </div>
+      <div class="app__screens">
+        <figure class="app__screen">
+          <div class="app__phone"><img src="assets/app-hoy.jpg" alt="Pantalla de inicio de la app con el entrenamiento del día" loading="lazy"></div>
+          <figcaption><span>01 · Hoy</span>Sabes qué te toca entrenar.</figcaption>
+        </figure>
+        <figure class="app__screen">
+          <div class="app__phone"><img src="assets/app-entrena.jpg" alt="Registro de series con peso y repeticiones" loading="lazy"></div>
+          <figcaption><span>02 · Entrena</span>Anota cada serie en un toque.</figcaption>
+        </figure>
+        <figure class="app__screen">
+          <div class="app__phone"><img src="assets/app-entrenador.jpg" alt="Resumen del entrenamiento con el comentario del entrenador" loading="lazy"></div>
+          <figcaption><span>03 · Tu entrenador</span>Veo tu entrenamiento y te comento.</figcaption>
+        </figure>
+        <figure class="app__screen">
+          <div class="app__phone"><img src="assets/app-progreso.jpg" alt="Pantalla de progreso con constancia y fuerza" loading="lazy"></div>
+          <figcaption><span>04 · Progreso</span>Mira cómo avanzas, semana a semana.</figcaption>
+        </figure>
+      </div>
+      <a class="btn btn--dark app__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20quiero%20entrenar%20con%20la%20app%20NL%20Training." target="_blank" rel="noopener">Escríbeme y empieza hoy</a>
     </section>
 
     <!-- ============ FRASE ============ -->
@@ -185,7 +214,8 @@
   </main>
 
   <footer class="footer">
-    <span class="nav__logo">Nicolás<span>Lobos</span></span>
+    <span class="brand"><span class="brand__mark">NL</span><span class="brand__name">NL Training</span></span>
+    <span>Nicolás Lobos · Profesor de Educación Física</span>
     <span>© <span id="year">2026</span> · Santiago, Chile</span>
   </footer>
 
