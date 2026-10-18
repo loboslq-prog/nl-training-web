@@ -198,7 +198,7 @@ em { font-style: italic; color: var(--stone); }
   text-align: center;
   padding: clamp(90px, 12vw, 160px) var(--pad);
 }
-.script { font-family: var(--script); font-size: clamp(60px, 9vw, 120px); line-height: 1.1; color: #4a4643; }
+.statement__title { font-family: var(--serif); font-size: clamp(44px, 7vw, 96px); line-height: 1.05; color: var(--ink); }
 .statement__text { max-width: 520px; margin: 20px auto 0; font-size: 18px; letter-spacing: .04em; color: var(--stone); }
 
 /* ---------- Dónde ---------- */
