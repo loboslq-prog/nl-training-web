@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nicolás Lobos · Entrenador personal en Santiago</title>
   <meta name="description" content="Nicolás Lobos, profesor de Educación Física y entrenador personal en Santiago. Más de 8 años y 150 alumnos. Entrenamiento presencial en Smart Fit Portugal, online y asesoría.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nicolás Lobos · NL Training">
+  <meta property="og:description" content="Entrenador personal y profesor de Educación Física. Presencial en Smart Fit Portugal y online con mi app NL Training.">
+  <meta property="og:image" content="https://nl-training-web.vercel.app/assets/og.jpg">
+  <meta name="theme-color" content="#eeece8">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23eeece8'/%3E%3Ccircle cx='32' cy='32' r='26' fill='none' stroke='%231a1a1a' stroke-width='2'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%231a1a1a'%3ENL%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -20,6 +26,7 @@
     </button>
     <nav class="nav__links">
       <a href="#sobre-mi">Sobre mí</a>
+      <a href="#metodo">Método</a>
       <a href="#servicios">Servicios</a>
       <a href="#app">App</a>
       <a href="#contacto" class="nav__cta">Contacto</a>
@@ -35,35 +42,48 @@
           <span class="display__solid">NICOLÁS</span>
           <em class="display__soft">LOBOS</em>
         </h1>
-        <p class="hero__lead">Profesor de Educación Física y entrenador personal.</p>
+        <p class="hero__hook">Entrenar sin registro es <em>adivinar.</em></p>
+        <p class="hero__lead">Profesor de Educación Física. Te acompaño en la sala y en mi app, para que sepas exactamente cómo avanzas.</p>
         <div class="hero__actions">
-          <a href="#contacto" class="btn btn--dark">Agenda tu evaluación</a>
-          <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+          <a href="#contacto" class="btn btn--dark">Quiero entrenar contigo</a>
+          <a href="#metodo" class="btn btn--ghost">Cómo trabajo</a>
         </div>
       </div>
-      <figure class="hero__photo">
-        <img src="assets/retrato.jpg" alt="Retrato del entrenador" width="900" height="900">
-      </figure>
+      <div class="hero__visual">
+        <svg class="hero__ring" viewBox="0 0 500 500" aria-hidden="true"><circle cx="250" cy="250" r="246" pathLength="1"/></svg>
+        <figure class="hero__photo">
+          <img src="assets/retrato.jpg" alt="Nicolás Lobos, entrenador personal" width="900" height="900">
+        </figure>
+      </div>
       <div class="hero__foot">
         <span>Fuerza</span><span class="dot">·</span>
         <span>Movimiento</span><span class="dot">·</span>
         <span>Hábitos</span>
-        <em class="hero__quote">Entrenar con criterio.</em>
+        <em class="hero__quote">Smart Fit Portugal · Online</em>
       </div>
     </section>
 
     <!-- ============ STATS ============ -->
     <section class="stats" aria-label="Trayectoria">
       <div class="stat">
-        <span class="stat__num" data-count="8">+8</span>
+        <span class="stat__ring" style="--frac:.8">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="stat__track" cx="60" cy="60" r="56"/><circle class="stat__fill" cx="60" cy="60" r="56" pathLength="1"/></svg>
+          <span class="stat__num" data-count="8">+8</span>
+        </span>
         <span class="stat__label">años<br>entrenando personas</span>
       </div>
       <div class="stat">
-        <span class="stat__num" data-count="150">+150</span>
+        <span class="stat__ring" style="--frac:1">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="stat__track" cx="60" cy="60" r="56"/><circle class="stat__fill" cx="60" cy="60" r="56" pathLength="1"/></svg>
+          <span class="stat__num" data-count="150">+150</span>
+        </span>
         <span class="stat__label">alumnos<br>acompañados</span>
       </div>
       <div class="stat">
-        <span class="stat__num">1:1</span>
+        <span class="stat__ring" style="--frac:1">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="stat__track" cx="60" cy="60" r="56"/><circle class="stat__fill" cx="60" cy="60" r="56" pathLength="1"/></svg>
+          <span class="stat__num">1:1</span>
+        </span>
         <span class="stat__label">atención<br>personalizada</span>
       </div>
     </section>
@@ -74,7 +94,7 @@
       <div class="about__grid">
         <h2 class="heading">Entreno personas,<br><em>no rutinas.</em></h2>
         <div class="about__body">
-          <p>No busco que entrenes más, sino que aprendas a entrenar. Evalúo bien, planifico con criterio y estoy presente en cada sesión, para que tus resultados se sostengan en el tiempo.</p>
+          <p>No busco que entrenes más, sino que aprendas a entrenar. Evalúo bien, planifico según lo que necesitas y estoy presente en cada sesión, para que tus resultados se sostengan en el tiempo.</p>
           <ul class="checks">
             <li>Profesor de Educación Física · Universidad Andrés Bello</li>
             <li>Diplomado en Medicina Deportiva y Actividad Física · Pontificia Universidad Católica</li>
@@ -104,6 +124,55 @@
       <a class="gallery__ig" href="https://instagram.com/nicolobosss" target="_blank" rel="noopener">Más entrenamientos en <em>@nicolobosss</em> →</a>
     </section>
 
+    <!-- ============ MÉTODO ============ -->
+    <section id="metodo" class="method section">
+      <p class="eyebrow"><span class="rule"></span>Cómo trabajo</p>
+      <h2 class="heading">No partimos con un plan.<br><em>Partimos contigo.</em></h2>
+      <div class="method__grid">
+        <div class="method__visual" aria-hidden="true">
+          <svg class="cycle" viewBox="0 0 400 400">
+            <circle class="cycle__track" cx="200" cy="200" r="150"/>
+            <circle class="cycle__fill" cx="200" cy="200" r="150" pathLength="1"/>
+            <g class="cycle__nodes"></g>
+            <circle class="cycle__dot" r="6"/>
+          </svg>
+          <div class="cycle__center"><span class="cycle__num">01</span><span class="cycle__name">Conocerte</span></div>
+        </div>
+        <ol class="method__steps">
+          <li class="mstep" data-step="0">
+            <span class="mstep__num">01</span>
+            <h3 class="mstep__title">Conocerte.</h3>
+            <p>Antes de cualquier ejercicio, conversamos: tus objetivos, tu experiencia, tu rutina y lo que te ha funcionado (o no).</p>
+            <span class="mstep__keys">Objetivos · Experiencia · Contexto</span>
+          </li>
+          <li class="mstep" data-step="1">
+            <span class="mstep__num">02</span>
+            <h3 class="mstep__title">Evaluar.</h3>
+            <p>Vemos cómo te mueves, tu fuerza y tu técnica. Así sabemos desde dónde partimos, sin suponer nada.</p>
+            <span class="mstep__keys">Movilidad · Fuerza · Técnica</span>
+          </li>
+          <li class="mstep" data-step="2">
+            <span class="mstep__num">03</span>
+            <h3 class="mstep__title">Planificar.</h3>
+            <p>Diseño un programa para ti: ejercicios, series, cargas y descansos. Todo queda en tu app.</p>
+            <span class="mstep__keys">Tu semana · Tus cargas · Tus descansos</span>
+          </li>
+          <li class="mstep" data-step="3">
+            <span class="mstep__num">04</span>
+            <h3 class="mstep__title">Entrenar.</h3>
+            <p>Presencial en Smart Fit Portugal o donde estés con la app. Aprendes la técnica y el porqué de cada ejercicio.</p>
+            <span class="mstep__keys">Técnica · Constancia · Acompañamiento</span>
+          </li>
+          <li class="mstep" data-step="4">
+            <span class="mstep__num">05</span>
+            <h3 class="mstep__title">Ajustar.</h3>
+            <p>Registramos cada sesión, medimos tu progreso y ajustamos el plan. Y el ciclo vuelve a empezar.</p>
+            <span class="mstep__keys">Registrar · Medir · Ajustar</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <!-- ============ SERVICIOS ============ -->
     <section id="servicios" class="services section">
       <p class="eyebrow"><span class="rule"></span>Servicios</p>
@@ -125,7 +194,7 @@
         <article class="card card--dark">
           <span class="card__num">02</span>
           <h3 class="card__title">Entrenamiento <em>online</em></h3>
-          <p>Un programa personalizado en mi app NL Training, con estructura y seguimiento, estés donde estés.</p>
+          <p>Tu programa en mi app NL Training, con mis comentarios y ajustes, estés donde estés.</p>
           <ul class="card__list">
             <li>Programa personalizado en la app</li>
             <li>Comentarios y ajustes de tu entrenador</li>
@@ -137,11 +206,11 @@
         <article class="card">
           <span class="card__num">03</span>
           <h3 class="card__title">Asesoría y <em>programación</em></h3>
-          <p>Para quienes ya entrenan pero necesitan estructura, planificación y dirección.</p>
+          <p>Para quienes ya entrenan, pero sienten que están estancados o sin un plan claro.</p>
           <ul class="card__list">
             <li>Revisión de tu entrenamiento</li>
             <li>Planificación a tu medida</li>
-            <li>Criterios de progresión</li>
+            <li>Cuándo y cómo progresar</li>
           </ul>
           <a href="#contacto" class="card__link">Quiero saber más →</a>
         </article>
@@ -152,40 +221,68 @@
     <section id="app" class="app section">
       <p class="eyebrow"><span class="rule"></span>App NL Training</p>
       <div class="app__head">
-        <h2 class="heading">Tu entrenador piensa.<br><em>NL Training te ayuda a hacerlo.</em></h2>
-        <p class="app__lead">Desarrollé mi propia app para que entrenes con estructura dentro y fuera del gimnasio: tu rutina, tus clases y tu progreso en un solo lugar. Entrenes conmigo presencial u online.</p>
+        <h2 class="heading">Mi propia app.<br><em>Para que dejes de adivinar.</em></h2>
+        <p class="app__lead">Desarrollé NL Training para acompañarte también fuera de la sesión: tu rutina, tus clases y tu progreso en un solo lugar, entrenes conmigo presencial u online.</p>
       </div>
-      <div class="app__screens">
-        <figure class="app__screen">
-          <div class="app__phone"><img src="assets/app-hoy.jpg" alt="Pantalla de inicio de la app con el entrenamiento del día" loading="lazy"></div>
-          <figcaption><span>01 · Hoy</span>Sabes qué te toca entrenar.</figcaption>
-        </figure>
-        <figure class="app__screen">
-          <div class="app__phone"><img src="assets/app-entrena.jpg" alt="Registro de series con peso y repeticiones" loading="lazy"></div>
-          <figcaption><span>02 · Entrena</span>Anota cada serie en un toque.</figcaption>
-        </figure>
-        <figure class="app__screen">
-          <div class="app__phone"><img src="assets/app-entrenador.jpg" alt="Resumen del entrenamiento con el comentario del entrenador" loading="lazy"></div>
-          <figcaption><span>03 · Tu entrenador</span>Veo tu entrenamiento y te comento.</figcaption>
-        </figure>
-        <figure class="app__screen">
-          <div class="app__phone"><img src="assets/app-progreso.jpg" alt="Pantalla de progreso con constancia y fuerza" loading="lazy"></div>
-          <figcaption><span>04 · Progreso</span>Mira cómo avanzas, semana a semana.</figcaption>
-        </figure>
+      <div class="app__scroll">
+        <ol class="app__steps">
+          <li class="astep" data-step="0">
+            <span class="astep__num">01 · Hoy</span>
+            <h3 class="astep__title">Sabes qué te toca entrenar.</h3>
+            <p>Abres la app y está tu entrenamiento del día, listo para empezar.</p>
+          </li>
+          <li class="astep" data-step="1">
+            <span class="astep__num">02 · Entrena</span>
+            <h3 class="astep__title">Cada serie queda guardada.</h3>
+            <p>Anotas kilos y repeticiones en un toque, y ves lo que hiciste la última vez.</p>
+          </li>
+          <li class="astep" data-step="2">
+            <span class="astep__num">03 · Tu entrenador</span>
+            <h3 class="astep__title">Yo lo reviso y te comento.</h3>
+            <p>Veo cada sesión que haces y te dejo indicaciones para la próxima.</p>
+          </li>
+          <li class="astep" data-step="3">
+            <span class="astep__num">04 · Progreso</span>
+            <h3 class="astep__title">Ves cómo avanzas.</h3>
+            <p>Constancia, fuerza y cargas, semana a semana. Sin adivinar.</p>
+          </li>
+        </ol>
+        <div class="app__sticky">
+          <div class="app__device">
+            <img src="assets/app-hoy.jpg" alt="Pantalla de inicio de la app con el entrenamiento del día" loading="lazy" data-step="0" class="is-active">
+            <img src="assets/app-entrena.jpg" alt="Registro de series con peso y repeticiones" loading="lazy" data-step="1">
+            <img src="assets/app-entrenador.jpg" alt="Resumen del entrenamiento con el comentario del entrenador" loading="lazy" data-step="2">
+            <img src="assets/app-progreso.jpg" alt="Pantalla de progreso con constancia y fuerza" loading="lazy" data-step="3">
+          </div>
+          <div class="app__dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
+        </div>
       </div>
-      <a class="btn btn--dark app__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20quiero%20entrenar%20con%20la%20app%20NL%20Training." target="_blank" rel="noopener">Escríbeme y empieza hoy</a>
+      <a class="btn btn--dark app__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20quiero%20entrenar%20con%20la%20app%20NL%20Training." target="_blank" rel="noopener">Quiero entrenar con la app</a>
     </section>
 
-    <!-- ============ FRASE ============ -->
-    <section class="statement">
-      <p class="statement__title">Entrenar con <em>criterio.</em></p>
-      <p class="statement__text">El mejor programa no es el más duro, es el que puedes sostener. Medir, ajustar y avanzar, semana a semana.</p>
+    <!-- ============ SISTEMA ============ -->
+    <section class="system">
+      <p class="eyebrow system__eyebrow"><span class="rule"></span>Cómo se conecta todo<span class="rule"></span></p>
+      <h2 class="heading system__title">Tú entrenas. <em>Yo ajusto.</em><br>La app nos <em>conecta.</em></h2>
+      <svg class="system__diagram" viewBox="0 0 640 520" aria-label="Diagrama: tú entrenas y registras en la app, la app me envía tus datos y yo ajusto tu plan">
+        <defs><marker id="sysArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#6b6661"/></marker></defs>
+        <path class="sys__edge" id="sysE1" d="M286 116 L132 360" marker-end="url(#sysArrow)"/>
+        <path class="sys__edge" id="sysE2" d="M178 420 L452 420" marker-end="url(#sysArrow)"/>
+        <path class="sys__edge" id="sysE3" d="M508 360 L354 116" marker-end="url(#sysArrow)"/>
+        <g class="sys__travel"></g>
+        <g class="sys__node"><circle cx="320" cy="70" r="58" fill="#1a1a1a"/><text x="320" y="82" class="sys__nl">NL</text></g>
+        <g class="sys__node"><circle cx="120" cy="420" r="58" fill="#eeece8" stroke="#1a1a1a" stroke-width="2"/><text x="120" y="434" class="sys__tu">Tú</text></g>
+        <g class="sys__node"><circle cx="520" cy="420" r="58" fill="#6b6661"/><text x="520" y="429" class="sys__app">APP</text></g>
+        <text x="178" y="230" class="sys__label" text-anchor="end">PLAN</text>
+        <text x="320" y="470" class="sys__label" text-anchor="middle">REGISTRO</text>
+        <text x="462" y="230" class="sys__label">DATOS</text>
+      </svg>
     </section>
 
     <!-- ============ CONTACTO ============ -->
     <section id="contacto" class="contact">
       <p class="eyebrow eyebrow--light"><span class="rule"></span>Contacto</p>
-      <h2 class="heading heading--light">Empecemos <em>hoy.</em></h2>
+      <h2 class="heading heading--light">¿<em>Partimos</em>?</h2>
       <p class="contact__lead">Escríbeme y agendamos tu evaluación inicial. Presencial en Smart Fit Portugal u online desde cualquier lugar, con horarios a coordinar.</p>
       <div class="contact__links">
         <a class="contact__item" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20me%20gustar%C3%ADa%20entrenar%20contigo." target="_blank" rel="noopener">
@@ -233,7 +330,7 @@
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
     }, { threshold: 0.15 });
-    document.querySelectorAll('.section, .stats, .statement, .contact').forEach(el => {
+    document.querySelectorAll('.section, .stats, .system, .contact').forEach(el => {
       el.classList.add('reveal');
       io.observe(el);
     });
@@ -251,7 +348,7 @@
     updateWa();
 
     // Aparición en cascada: tarjetas, fotos y pantallas de la app
-    document.querySelectorAll('.cards, .gallery__grid, .app__screens').forEach(group =>
+    document.querySelectorAll('.cards, .gallery__grid').forEach(group =>
       [...group.children].forEach((el, i) => { el.classList.add('stagger'); el.style.setProperty('--i', i); })
     );
 
@@ -271,6 +368,80 @@
       requestAnimationFrame(tick);
     }), { threshold: 0.6 });
     document.querySelectorAll('[data-count]').forEach(el => countIo.observe(el));
+
+    // Paso activo según el scroll (método y app): el que cruza el centro de la pantalla
+    const onActive = (items, cb) => {
+      const obs = new IntersectionObserver(entries => entries.forEach(e => {
+        if (e.isIntersecting) cb(+e.target.dataset.step);
+      }), { rootMargin: '-58% 0px -32% 0px' });
+      items.forEach(el => obs.observe(el));
+    };
+
+    // --- Ciclo del método ---
+    const NS = 'http://www.w3.org/2000/svg';
+    const cycle = document.querySelector('.cycle');
+    const steps = [...document.querySelectorAll('.mstep')];
+    const names = steps.map(li => li.querySelector('.mstep__title').textContent.replace('.', ''));
+    const R = 150, C = 200;
+    const pos = i => { const a = -Math.PI / 2 + i * 2 * Math.PI / steps.length; return [C + R * Math.cos(a), C + R * Math.sin(a)]; };
+    const nodes = steps.map((_, i) => {
+      const [x, y] = pos(i);
+      const g = document.createElementNS(NS, 'g');
+      g.innerHTML = `<circle class="cycle__node" cx="${x}" cy="${y}" r="13"/><text class="cycle__n" x="${x}" y="${y + 4}">${i + 1}</text>`;
+      cycle.querySelector('.cycle__nodes').appendChild(g);
+      return g;
+    });
+    const cNum = document.querySelector('.cycle__num'), cName = document.querySelector('.cycle__name');
+    const fill = cycle.querySelector('.cycle__fill');
+    let methodStep = 0;
+    const setMethod = i => {
+      methodStep = i;
+      steps.forEach((li, k) => li.classList.toggle('is-active', k === i));
+      nodes.forEach((g, k) => g.classList.toggle('is-done', k <= i));
+      fill.style.strokeDashoffset = 1 - i / steps.length;
+      cName.classList.remove('swap'); void cName.offsetWidth; cName.classList.add('swap');
+      cNum.textContent = '0' + (i + 1); cName.textContent = names[i];
+    };
+    setMethod(0);
+    onActive(steps, setMethod);
+
+    // Punto que recorre el ciclo de forma continua
+    const dot = cycle.querySelector('.cycle__dot');
+    let dotA = -Math.PI / 2;
+    const spin = () => {
+      dotA += reduce ? 0 : 0.008;
+      dot.setAttribute('cx', C + R * Math.cos(dotA)); dot.setAttribute('cy', C + R * Math.sin(dotA));
+      requestAnimationFrame(spin);
+    };
+    spin();
+
+    // --- App: la pantalla cambia con el scroll ---
+    const appSteps = [...document.querySelectorAll('.astep')];
+    const screens = [...document.querySelectorAll('.app__device img')];
+    const appDots = [...document.querySelectorAll('.app__dots span')];
+    onActive(appSteps, i => {
+      appSteps.forEach((li, k) => li.classList.toggle('is-active', k === i));
+      screens.forEach((im, k) => im.classList.toggle('is-active', k === i));
+      appDots.forEach((d, k) => d.classList.toggle('is-active', k === i));
+    });
+    appSteps[0].classList.add('is-active');
+
+    // --- Sistema: puntos que viajan por las flechas ---
+    const sys = document.querySelector('.system__diagram');
+    const edges = ['sysE1', 'sysE2', 'sysE3'].map(id => document.getElementById(id));
+    const travel = sys.querySelector('.sys__travel');
+    const dots = [];
+    edges.forEach(path => { for (let k = 0; k < 3; k++) { const c = document.createElementNS(NS, 'circle'); c.setAttribute('r', 6); travel.appendChild(c); dots.push({ path, off: k / 3, el: c }); } });
+    let sysOn = false;
+    new IntersectionObserver(([e]) => { sysOn = e.isIntersecting; }).observe(sys);
+    const flow = now => {
+      if (sysOn && !reduce) dots.forEach(d => {
+        const L = d.path.getTotalLength(), u = (now / 2600 + d.off) % 1, pt = d.path.getPointAtLength(u * L * .9);
+        d.el.setAttribute('cx', pt.x); d.el.setAttribute('cy', pt.y); d.el.style.opacity = Math.sin(Math.PI * u);
+      });
+      requestAnimationFrame(flow);
+    };
+    requestAnimationFrame(flow);
   </script>
 </body>
 </html>
