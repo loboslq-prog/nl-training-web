@@ -135,6 +135,9 @@ em { font-style: italic; color: var(--stone); }
 .hero__tag { width: 92px; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--concrete); }
 .hero__where em { font-family: var(--serif); font-size: 21px; color: var(--ink); }
 .hero__note { font-size: 13px; letter-spacing: .04em; color: var(--stone); }
+.hero__pin { display: inline-flex; align-items: center; gap: 5px; border-bottom: 1px solid transparent; transition: border-color .3s, color .3s; }
+.hero__pin svg { width: 15px; height: 15px; flex: none; }
+.hero__pin:hover { color: var(--ink); border-color: var(--ink); }
 
 /* ---------- Stats ---------- */
 .stats {
