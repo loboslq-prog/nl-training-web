@@ -82,7 +82,7 @@ em { font-style: italic; color: var(--stone); }
 }
 .nav__logo span {
   font-family: var(--serif); font-style: italic; font-weight: 400;
-  color: var(--stone); margin-left: 6px;
+  color: var(--stone); margin-left: 2px;
 }
 .nav__links { display: flex; align-items: center; gap: 36px; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
 .nav__links a { position: relative; }
@@ -148,7 +148,7 @@ em { font-style: italic; color: var(--stone); }
 /* ---------- Secciones ---------- */
 .section { max-width: var(--max); margin: 0 auto; padding: clamp(80px, 12vw, 150px) var(--pad); }
 
-.about__grid, .where__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .about__body p { margin-bottom: 20px; color: #3b3936; }
 .checks { list-style: none; margin-top: 32px; border-top: 1px solid var(--line); }
 .checks li {
@@ -222,12 +222,6 @@ em { font-style: italic; color: var(--stone); }
 .statement__title { font-family: var(--serif); font-size: clamp(44px, 7vw, 96px); line-height: 1.05; color: var(--ink); }
 .statement__text { max-width: 520px; margin: 20px auto 0; font-size: 18px; letter-spacing: .04em; color: var(--stone); }
 
-/* ---------- Dónde ---------- */
-.where dl { margin-bottom: 36px; }
-.where dl div { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-.where dl div:first-child { border-top: 1px solid var(--line); }
-.where dt { font-size: 12px; letter-spacing: .26em; text-transform: uppercase; color: var(--stone); padding-top: 4px; }
-
 /* ---------- Contacto ---------- */
 .contact { background: var(--ink); color: var(--paper); padding: clamp(90px, 12vw, 150px) var(--pad); }
 .contact > * { max-width: var(--max); margin-left: auto; margin-right: auto; }
@@ -248,6 +242,20 @@ em { font-style: italic; color: var(--stone); }
 }
 .footer .nav__logo { color: var(--paper); font-size: 20px; }
 
+/* ---------- WhatsApp flotante (celular) ---------- */
+.wa-float {
+  position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 20;
+  display: none; align-items: center; gap: 8px;
+  height: 48px; padding: 0 18px 0 14px; border-radius: 999px;
+  background: var(--ink); color: var(--paper);
+  font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+  box-shadow: 0 10px 30px -12px rgba(26, 26, 26, .5);
+  opacity: 0; transform: translateY(16px); pointer-events: none;
+  transition: opacity .4s ease, transform .4s ease;
+}
+.wa-float svg { width: 20px; height: 20px; }
+.wa-float.is-shown { opacity: 1; transform: none; pointer-events: auto; }
+
 /* ---------- Animación ---------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
@@ -260,11 +268,12 @@ em { font-style: italic; color: var(--stone); }
 @media (max-width: 960px) {
   .cards { grid-template-columns: 1fr; }
   .pillars { grid-template-columns: 1fr 1fr; }
-  .about__grid, .where__grid { grid-template-columns: 1fr; gap: 36px; }
+  .about__grid { grid-template-columns: 1fr; gap: 36px; }
 }
 
 @media (max-width: 760px) {
   body { font-size: 16px; }
+  .wa-float { display: inline-flex; }
   .gallery__grid { grid-template-columns: 1fr; grid-template-rows: none; }
   .gallery__item--tall { grid-row: auto; aspect-ratio: 4 / 5; }
   .gallery__item:not(.gallery__item--tall) { aspect-ratio: 16 / 10; }
@@ -292,5 +301,4 @@ em { font-style: italic; color: var(--stone); }
 
   .pillars { grid-template-columns: 1fr; }
   .contact__links { grid-template-columns: 1fr; }
-  .where dl div { grid-template-columns: 1fr; gap: 4px; }
 }

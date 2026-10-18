@@ -14,14 +14,13 @@
 
   <!-- ============ NAV ============ -->
   <header class="nav">
-    <a href="#inicio" class="nav__logo">Nicolás<span>Lobos</span></a>
+    <a href="#inicio" class="nav__logo" aria-label="Nicolás Lobos, volver al inicio">N<span>L</span></a>
     <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span>
     </button>
     <nav class="nav__links">
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#servicios">Servicios</a>
-      <a href="#donde">Dónde</a>
       <a href="#contacto" class="nav__cta">Contacto</a>
     </nav>
   </header>
@@ -74,8 +73,7 @@
       <div class="about__grid">
         <h2 class="heading">Entreno personas,<br><em>no rutinas.</em></h2>
         <div class="about__body">
-          <p>Soy Nicolás Lobos, profesor de Educación Física y entrenador personal. Llevo más de 8 años trabajando en gimnasios y he acompañado a más de 150 alumnos a ganar fuerza, moverse mejor y sostener sus resultados en el tiempo.</p>
-          <p>No busco que entrenes más, sino que aprendas a entrenar: evaluar bien, planificar con criterio y estar presente en cada sesión. Sigo formándome constantemente, porque cada persona necesita algo distinto.</p>
+          <p>No busco que entrenes más, sino que aprendas a entrenar. Evalúo bien, planifico con criterio y estoy presente en cada sesión, para que tus resultados se sostengan en el tiempo.</p>
           <ul class="checks">
             <li>Profesor de Educación Física · Universidad Andrés Bello</li>
             <li>Diplomado en Medicina Deportiva y Actividad Física · Pontificia Universidad Católica</li>
@@ -164,27 +162,11 @@
       <p class="statement__text">El mejor programa no es el más duro, es el que puedes sostener. Medir, ajustar y avanzar, semana a semana.</p>
     </section>
 
-    <!-- ============ DÓNDE ============ -->
-    <section id="donde" class="where section">
-      <p class="eyebrow"><span class="rule"></span>Dónde entreno</p>
-      <div class="where__grid">
-        <h2 class="heading">Smart Fit Portugal<br><em>Santiago Centro.</em></h2>
-        <div class="where__info">
-          <dl>
-            <div><dt>Presencial</dt><dd>Smart Fit Portugal · Santiago Centro</dd></div>
-            <div><dt>Horarios</dt><dd>A coordinar según tu disponibilidad</dd></div>
-            <div><dt>Online</dt><dd>Desde cualquier lugar</dd></div>
-          </dl>
-          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Smart+Fit+Portugal+Santiago" target="_blank" rel="noopener">Cómo llegar</a>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ CONTACTO ============ -->
     <section id="contacto" class="contact">
       <p class="eyebrow eyebrow--light"><span class="rule"></span>Contacto</p>
       <h2 class="heading heading--light">Empecemos <em>hoy.</em></h2>
-      <p class="contact__lead">Escríbeme y agendamos tu evaluación inicial. Te respondo personalmente.</p>
+      <p class="contact__lead">Escríbeme y agendamos tu evaluación inicial. Presencial en Smart Fit Portugal u online desde cualquier lugar, con horarios a coordinar.</p>
       <div class="contact__links">
         <a class="contact__item" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20me%20gustar%C3%ADa%20entrenar%20contigo." target="_blank" rel="noopener">
           <span class="contact__label">WhatsApp</span>
@@ -195,8 +177,8 @@
           <span class="contact__value">@nicolobosss</span>
         </a>
         <a class="contact__item" href="https://www.google.com/maps/search/?api=1&amp;query=Smart+Fit+Portugal+Santiago" target="_blank" rel="noopener">
-          <span class="contact__label">Presencial</span>
-          <span class="contact__value">Smart Fit Portugal</span>
+          <span class="contact__label">Presencial · Santiago Centro</span>
+          <span class="contact__value">Cómo llegar →</span>
         </a>
       </div>
     </section>
@@ -206,6 +188,11 @@
     <span class="nav__logo">Nicolás<span>Lobos</span></span>
     <span>© <span id="year">2026</span> · Santiago, Chile</span>
   </footer>
+
+  <a class="wa-float" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20me%20gustar%C3%ADa%20entrenar%20contigo." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.6 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.6 2 2.6 2.5.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.4 0 .5-.1 1.1-.6 1.5-.5.4-1.2.6-1.9.5-1-.1-2.6-.7-4-2.1-1.6-1.5-2.3-3.2-2.4-4.1 0-.8.3-1.5.4-1.7Z" fill="currentColor"/></svg>
+    <span>WhatsApp</span>
+  </a>
 
   <script>
     const toggle = document.querySelector('.nav__toggle');
@@ -229,6 +216,18 @@
       el.classList.add('reveal');
       io.observe(el);
     });
+
+    // Botón de WhatsApp: aparece después del inicio y se oculta al llegar a contacto
+    const wa = document.querySelector('.wa-float');
+    const hero = document.getElementById('inicio');
+    const contact = document.getElementById('contacto');
+    const updateWa = () => {
+      const pastHero = hero.getBoundingClientRect().bottom < innerHeight * 0.3;
+      const atContact = contact.getBoundingClientRect().top < innerHeight * 0.8;
+      wa.classList.toggle('is-shown', pastHero && !atContact);
+    };
+    addEventListener('scroll', updateWa, { passive: true });
+    updateWa();
   </script>
 </body>
 </html>
