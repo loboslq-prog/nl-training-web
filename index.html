@@ -19,6 +19,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/correccion-tecnica.jpg">
   <link rel="stylesheet" href="styles.css">
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -456,7 +458,11 @@
       feats.forEach((f, k) => { f.classList.toggle('is-active', k === i); f.style.setProperty('--p', 0); });
     };
     feats.forEach((f, i) => f.querySelector('button').addEventListener('click', () => { aT = 0; showApp(i); track('app_pantalla', { pantalla: i + 1 }); }));
-    new IntersectionObserver(([e]) => { appOn = e.isIntersecting; }, { threshold: .3 }).observe(document.querySelector('.app__show'));
+    // Solo avanza mientras está en pantalla; cada vez que aparece parte desde la pantalla 1
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting && !appOn) { aT = 0; showApp(0); }
+      appOn = e.isIntersecting;
+    }, { threshold: .5 }).observe(document.querySelector('.app__show'));
     let lastA = 0;
     const appLoop = now => {
       const dt = Math.min(100, now - (lastA || now)); lastA = now;
