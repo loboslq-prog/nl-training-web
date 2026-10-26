@@ -216,6 +216,7 @@
           <a class="path__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20vi%20NL%20Training%20y%20me%20interesa%20conocer%20la%20programaci%C3%B3n." target="_blank" rel="noopener" data-ev="wa_programacion"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.6 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.6 2 2.6 2.5.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.4 0 .5-.1 1.1-.6 1.5-.5.4-1.2.6-1.9.5-1-.1-2.6-.7-4-2.1-1.6-1.5-2.3-3.2-2.4-4.1 0-.8.3-1.5.4-1.7Z" fill="currentColor"/></svg><span>Consultar por programación</span></a>
         </article>
       </div>
+      <div class="paths__nav" aria-hidden="true"><div class="paths__dots"><button class="is-active"></button><button></button><button></button></div><span class="paths__hint">Desliza →</span></div>
     </section>
 
     <!-- ============ APP ============ -->
@@ -241,6 +242,7 @@
             <li class="feat"><button type="button"><span class="feat__n">03</span><span><b>Mis ajustes</b><i>Reviso cada sesión y te dejo indicaciones para la próxima.</i></span></button><span class="feat__bar"></span></li>
             <li class="feat"><button type="button"><span class="feat__n">04</span><span><b>Tu progreso</b><i>Constancia, fuerza y cargas, semana a semana.</i></span></button><span class="feat__bar"></span></li>
           </ol>
+          <div class="app__now" aria-live="polite"><b>Tu rutina</b><p>Abres la app y está tu entrenamiento del día.</p></div>
         </div>
       </div>
 
@@ -407,7 +409,7 @@
     const cycle = document.querySelector('.cycle');
     const steps = [...document.querySelectorAll('.step')];
     const names = steps.map(s => s.querySelector('b').textContent);
-    const N = steps.length, R = 170, C = 200, STEP = 3600;
+    const N = steps.length, R = 170, C = 200, STEP = 7000;   // ms por paso: tiempo para leer
     const ang = i => -Math.PI / 2 + i * 2 * Math.PI / N;
     const nodes = names.map((name, i) => {
       const x = C + R * Math.cos(ang(i)), y = C + R * Math.sin(ang(i));
@@ -436,7 +438,8 @@
       cFill.style.strokeDashoffset = 1 - pos / N;
       showStep(Math.floor(pos + 0.02) % N);
     };
-    const goStep = i => { mT = i * STEP; drawCycle(); track('metodo_paso', { paso: names[i] }); };
+    let mHold = 0;   // al tocar un paso, se queda quieto un rato para leerlo
+    const goStep = i => { mT = i * STEP; mHold = performance.now() + 12000; drawCycle(); track('metodo_paso', { paso: names[i] }); };
     nodes.forEach((g, i) => g.addEventListener('click', () => goStep(i)));
     steps.forEach((s, i) => {
       s.addEventListener('click', () => goStep(i));
@@ -451,7 +454,7 @@
     }, { threshold: .5 }).observe(cycle);
     const cycleLoop = now => {
       const dt = Math.min(100, now - (lastC || now)); lastC = now;
-      if (cycleOn && !reduce) { mT += dt; drawCycle(); }
+      if (cycleOn && !reduce && now > mHold) { mT += dt; drawCycle(); }
       requestAnimationFrame(cycleLoop);
     };
     requestAnimationFrame(cycleLoop);
@@ -460,13 +463,16 @@
     const screens = [...document.querySelectorAll('.app__device img')];
     const feats = [...document.querySelectorAll('.feat')];
     let aStep = 0, aT = 0, appOn = false;
-    const APP_HOLD = 4200;
+    const APP_HOLD = 6500;
+    const nowB = document.querySelector('.app__now b'), nowP = document.querySelector('.app__now p');
+    let aHold = 0;
     const showApp = i => {
       aStep = i;
       screens.forEach((im, k) => im.classList.toggle('is-active', k === i));
       feats.forEach((f, k) => { f.classList.toggle('is-active', k === i); f.style.setProperty('--p', 0); });
+      swapText(nowB, feats[i].querySelector('b').textContent); swapText(nowP, feats[i].querySelector('i').textContent);
     };
-    feats.forEach((f, i) => f.querySelector('button').addEventListener('click', () => { aT = 0; showApp(i); track('app_pantalla', { pantalla: i + 1 }); }));
+    feats.forEach((f, i) => f.querySelector('button').addEventListener('click', () => { aT = 0; aHold = performance.now() + 10000; showApp(i); track('app_pantalla', { pantalla: i + 1 }); }));
     // Solo avanza mientras está en pantalla; cada vez que aparece parte desde la pantalla 1
     new IntersectionObserver(([e]) => {
       if (e.isIntersecting && !appOn) { aT = 0; showApp(0); }
@@ -475,7 +481,7 @@
     let lastA = 0;
     const appLoop = now => {
       const dt = Math.min(100, now - (lastA || now)); lastA = now;
-      if (appOn && !reduce) {
+      if (appOn && !reduce && now > aHold) {
         aT += dt;
         feats[aStep].style.setProperty('--p', Math.min(1, aT / APP_HOLD));
         if (aT >= APP_HOLD) { aT = 0; showApp((aStep + 1) % feats.length); }
@@ -500,6 +506,14 @@
       requestAnimationFrame(flow);
     };
     requestAnimationFrame(flow);
+
+    // --- Servicios en celular: puntos que siguen el deslizamiento ---
+    const paths = document.querySelector('.paths'), pDots = [...document.querySelectorAll('.paths__dots button')];
+    paths.addEventListener('scroll', () => {
+      const cards = [...paths.children], mid = paths.scrollLeft + paths.clientWidth * .3;
+      const i = cards.reduce((best, c, k) => Math.abs(c.offsetLeft - mid) < Math.abs(cards[best].offsetLeft - mid) ? k : best, 0);
+      pDots.forEach((d, k) => d.classList.toggle('is-active', k === i));
+    }, { passive: true });
 
     // --- Preguntas: registrar cuáles se abren ---
     document.querySelectorAll('.faq details').forEach(d =>
