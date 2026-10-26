@@ -245,9 +245,6 @@ em { font-style: italic; color: var(--stone); }
 .path--dark .path__cta:hover { background: transparent; color: var(--paper); }
 .paths__nav { display: none; }
 
-.statement { background: var(--bone-2); text-align: center; padding: clamp(72px, 11vw, 150px) var(--pad); }
-.statement__text { font-family: var(--serif); font-size: clamp(34px, 6vw, 80px); line-height: 1.1; letter-spacing: -.01em; }
-
 /* ---------- App ---------- */
 .app { border-top: 1px solid var(--line); }
 .app__head { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: end; margin-bottom: 64px; }
