@@ -219,6 +219,11 @@
       </div>
     </section>
 
+    <!-- ============ FRASE ============ -->
+    <section class="statement" aria-label="Cómo trabajo">
+      <p class="statement__text">No te doy una rutina.<br><em>Te enseño a entrenar.</em></p>
+    </section>
+
     <!-- ============ APP ============ -->
     <section id="app" class="app section">
       <p class="eyebrow"><span class="rule"></span>App NL Training</p>
@@ -367,7 +372,7 @@
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
     }, { threshold: 0.15 });
-    document.querySelectorAll('.section, .problem, .contact, .loop').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+    document.querySelectorAll('.section, .problem, .contact, .loop, .statement').forEach(el => { el.classList.add('reveal'); io.observe(el); });
     document.querySelectorAll('.pillars__grid, .stories, .paths, .problem__list, .faq__list, .creds').forEach(group =>
       [...group.children].forEach((el, i) => { el.classList.add('stagger'); el.style.setProperty('--i', i); })
     );
