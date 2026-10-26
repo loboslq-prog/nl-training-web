@@ -192,9 +192,11 @@ em { font-style: italic; color: var(--stone); }
 .is-done .cycle__n { fill: var(--paper); }
 .is-current .cycle__node { stroke-width: 6; stroke: rgba(26, 26, 26, .15); paint-order: stroke; }
 .cycle__dot { fill: var(--ink); }
-.cycle__center { position: absolute; inset: 22%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-.cycle__num { font-family: var(--serif); font-size: clamp(64px, 8vw, 104px); line-height: 1; color: var(--line); }
-.cycle__name { font-family: var(--serif); font-style: italic; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.05; margin-top: -10px; }
+.cycle__center { position: absolute; inset: 17%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.cycle__num { font-size: 12px; letter-spacing: .3em; color: var(--stone); }
+.cycle__name { font-family: var(--serif); font-style: italic; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.05; margin: 8px 0 6px; }
+.cycle__keys { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--stone); }
+.cycle__text { margin-top: 12px; font-size: clamp(14px, 1.3vw, 16px); line-height: 1.5; color: #3b3936; max-width: 28ch; }
 .steps { list-style: none; border-top: 1px solid var(--line); }
 .step { position: relative; display: flex; gap: 22px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--line); cursor: pointer; color: var(--muted); transition: color .5s; }
 .step::before { content: ""; position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
@@ -203,8 +205,7 @@ em { font-style: italic; color: var(--stone); }
 .step__n { font-family: var(--serif); font-size: 22px; min-width: 2ch; }
 .step__body b { display: block; font-family: var(--serif); font-weight: 400; font-size: 26px; line-height: 1.2; }
 .step__body i { display: block; margin-top: 2px; font-style: normal; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--stone); }
-.step__desc { display: block; max-height: 0; opacity: 0; overflow: hidden; font-size: 16px; line-height: 1.5; color: #3b3936; transition: max-height .6s var(--ease), opacity .6s, margin .6s; }
-.step.is-current .step__desc { max-height: 5em; opacity: 1; margin-top: 8px; }
+.step__desc { display: none; }  /* texto que se muestra dentro del círculo */
 .swap { animation: fadeUp .6s var(--ease); }
 
 /* ---------- Resultados ---------- */
@@ -455,7 +456,12 @@ em { font-style: italic; color: var(--stone); }
   .loop__diagram { max-width: 280px; }
   .path--dark { margin: 0 -10px; padding: 32px 18px; }
   .path__rows div { grid-template-columns: 84px 1fr; }
-  .method__visual { max-width: 340px; }
+  .method__visual { max-width: 360px; }
+  .cycle__center { inset: 13%; }
+  .cycle__name { font-size: 28px; }
+  .cycle__keys { font-size: 10px; letter-spacing: .12em; }
+  .cycle__text { font-size: 14px; margin-top: 8px; }
+  .steps { display: none; }
   .step { padding: 14px 0; gap: 16px; }
   .step__body b { font-size: 22px; }
   .step__body i { font-size: 11px; letter-spacing: .14em; }

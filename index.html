@@ -164,9 +164,11 @@
             <circle class="cycle__dot" r="7"/>
             <g class="cycle__nodes"></g>
           </svg>
-          <div class="cycle__center" aria-hidden="true">
-            <span class="cycle__num">01</span>
+          <div class="cycle__center" aria-live="polite">
+            <span class="cycle__num">01 / 05</span>
             <span class="cycle__name">Conocerte</span>
+            <span class="cycle__keys">Objetivos · Experiencia · Contexto</span>
+            <p class="cycle__text">Antes de cualquier ejercicio, conversamos: qué buscas, tu experiencia y tu tiempo.</p>
           </div>
         </div>
         <ol class="steps">
@@ -415,7 +417,9 @@
       cycle.querySelector('.cycle__nodes').appendChild(g);
       return g;
     });
-    const cNum = document.querySelector('.cycle__num'), cName = document.querySelector('.cycle__name');
+    const cNum = document.querySelector('.cycle__num'), cName = document.querySelector('.cycle__name'),
+          cKeys = document.querySelector('.cycle__keys'), cText = document.querySelector('.cycle__text');
+    const keys = steps.map(s => s.querySelector('i').textContent), descs = steps.map(s => s.querySelector('.step__desc').textContent);
     const cFill = cycle.querySelector('.cycle__fill'), cDot = cycle.querySelector('.cycle__dot');
     let mStep = -1, mT = 0;
     const showStep = i => {
@@ -423,7 +427,7 @@
       mStep = i;
       nodes.forEach((g, k) => { g.classList.toggle('is-done', k <= i); g.classList.toggle('is-current', k === i); });
       steps.forEach((s, k) => s.classList.toggle('is-current', k === i));
-      swapText(cNum, `0${i + 1}`); swapText(cName, names[i]);
+      swapText(cNum, `0${i + 1} / 0${N}`); swapText(cName, names[i]); swapText(cKeys, keys[i]); swapText(cText, descs[i]);
     };
     const drawCycle = () => {
       const pos = (mT / STEP) % N;
