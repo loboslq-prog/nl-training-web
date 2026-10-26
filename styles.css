@@ -409,17 +409,9 @@ em { font-style: italic; color: var(--stone); }
   .nav.is-open .nav__toggle span:last-child { top: 10px; transform: rotate(-45deg); }
 
   .pillars__grid, .stories { grid-template-columns: 1fr; }
-  /* Servicios: uno al lado del otro, deslizando */
-  .paths { position: relative; display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 40px calc(var(--pad) * -1) 0; padding: 0 var(--pad) 8px; scroll-padding: 0 var(--pad); scrollbar-width: none; }
-  .paths::-webkit-scrollbar { display: none; }
-  .path { flex: 0 0 min(84%, 400px); scroll-snap-align: start; padding: 28px 22px; }
-  .path__cta { align-self: stretch; justify-content: center; padding: 13px 12px; font-size: 11px; letter-spacing: .08em; }
-  .paths__nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; }
-  .paths__dots { display: flex; gap: 8px; }
-  .paths__dots button { width: 28px; height: 18px; padding: 0; border: 0; background: none; cursor: pointer; position: relative; }
-  .paths__dots button::after { content: ""; position: absolute; left: 0; right: 0; top: 8px; height: 2px; border-radius: 2px; background: var(--line); transition: background .3s; }
-  .paths__dots button.is-active::after { background: var(--ink); }
-  .paths__hint { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--stone); }
+  /* Servicios: tarjetas separadas, una bajo otra */
+  .paths { grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
+  .path { padding: 28px 22px; }
   .pillar { display: grid; grid-template-columns: 38% 1fr; gap: 0 20px; align-items: center; }
   .pillar__img { grid-row: span 3; margin-bottom: 0; aspect-ratio: 1; }
   .app__head { grid-template-columns: 1fr; gap: 20px; }
@@ -480,6 +472,8 @@ em { font-style: italic; color: var(--stone); }
   .contact__links { grid-template-columns: 1fr; margin-top: 56px; }
   .footer { flex-direction: column; align-items: flex-start; }
 
+  .path__cta { display: none; }
+  .path__rows { margin: 22px 0 0; }
   .app__show { gap: 24px; }
   .app__device { width: 190px; border-radius: 26px; }
   .feats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; border-top: 0; }
