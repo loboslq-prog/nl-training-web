@@ -141,9 +141,9 @@ em { font-style: italic; color: var(--stone); }
   font-size: 11px; letter-spacing: .26em; text-transform: uppercase;
   animation: pop .8s var(--ease) both, float 6s ease-in-out infinite;
 }
-.hero__badge--a { left: -4%; top: 22%; animation-delay: 1.4s, 2.2s; }
-.hero__badge--b { right: -3%; top: 70%; animation-delay: 1.7s, 3s; }
-.hero__badge--c { left: 12%; bottom: 4%; animation-delay: 2s, 3.8s; }
+.hero__badge--a { left: -6%; top: 20%; animation-delay: 1.4s, 2.2s; }
+.hero__badge--b { right: -3%; top: 76%; animation-delay: 1.7s, 3s; }
+.hero__badge--c { left: 0%; bottom: 14%; animation-delay: 2s, 3.8s; }
 
 /* ---------- Problema ---------- */
 .problem { background: var(--ink); color: var(--paper); padding: clamp(72px, 11vw, 140px) var(--pad); }
