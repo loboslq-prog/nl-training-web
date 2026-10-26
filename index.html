@@ -58,8 +58,12 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "Depende del servicio y la frecuencia. Escríbeme por WhatsApp y te cuento los valores."}}, {"@type": "Question", "name": "¿Dónde entrenas presencialmente?", "acceptedAnswer": {"@type": "Answer", "text": "En gimnasios Smart Fit de Santiago. Mis clases son en Smart Fit Portugal."}}, {"@type": "Question", "name": "¿Necesito experiencia? ¿Puedo partir desde cero?", "acceptedAnswer": {"@type": "Answer", "text": "No necesitas experiencia. Partimos desde donde estás: primero te conozco y te evalúo, y el plan se arma sobre eso."}}, {"@type": "Question", "name": "¿Cómo funciona el entrenamiento online?", "acceptedAnswer": {"@type": "Answer", "text": "Te armo un programa personalizado en la app NL Training. Registras cada sesión, yo reviso lo que haces y ajusto tu plan."}}, {"@type": "Question", "name": "¿Cómo es el seguimiento?", "acceptedAnswer": {"@type": "Answer", "text": "Reviso cada sesión que registras en la app (cargas, repeticiones y constancia) y te dejo indicaciones para la próxima. Si algo no avanza, cambiamos el plan."}}, {"@type": "Question", "name": "¿La app está incluida?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, en el entrenamiento personal y en el online. Funciona desde el celular, sin descargar nada."}}, {"@type": "Question", "name": "¿Tengo que entrenar todos los días?", "acceptedAnswer": {"@type": "Answer", "text": "No. La frecuencia se define según tu objetivo, tu tiempo y tu experiencia."}}, {"@type": "Question", "name": "¿Puedo contratar solo programación?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Es para quienes ya entrenan y quieren un programa hecho para su objetivo."}}]}
+  </script>
 </head>
 <body>
+  <a class="skip" href="#main">Saltar al contenido</a>
 
   <!-- ============ NAV ============ -->
   <header class="nav">
@@ -76,17 +80,20 @@
     <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ============ HERO ============ -->
     <section id="inicio" class="hero">
       <div class="hero__text">
         <p class="eyebrow"><span class="rule"></span>NL Training · Santiago</p>
         <h1 class="display"><span class="display__line">Entrenar</span> <span class="display__line"><em>sin adivinar.</em></span></h1>
         <p class="hero__lead">Entrenamiento personalizado para construir fuerza, mejorar tu físico y aprender a entrenar de verdad.</p>
-        <p class="hero__modes"><span>Presencial</span><span class="hero__sep"></span><span>Online</span></p>
+        <ul class="hero__modes">
+          <li><b>Presencial</b> en Santiago</li>
+          <li><b>Online</b> con app de seguimiento</li>
+        </ul>
         <div class="hero__actions">
           <a href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20vi%20NL%20Training%20y%20quiero%20entrenar." class="btn btn--dark" target="_blank" rel="noopener" data-ev="wa_hero">Quiero entrenar</a>
-          <a href="#problema" class="btn btn--ghost">Conocer NL Training</a>
+          <a href="#metodo" class="hero__link">Ver el método <span aria-hidden="true">→</span></a>
         </div>
         <a class="hero__person" href="#sobre-mi">
           <img src="assets/retrato.jpg" alt="" width="96" height="96">
@@ -95,7 +102,7 @@
       </div>
       <div class="hero__visual" aria-hidden="true">
         <svg class="hero__ring" viewBox="0 0 500 500"><circle cx="250" cy="250" r="246" pathLength="1"/></svg>
-        <figure class="hero__photo"><img src="assets/correccion-tecnica.jpg" alt="" width="1179" height="686"></figure>
+        <figure class="hero__photo"><img src="assets/correccion-tecnica.jpg" alt="" width="1179" height="686" fetchpriority="high"></figure>
         <span class="hero__badge hero__badge--a">Técnica</span>
         <span class="hero__badge hero__badge--b">Registro</span>
         <span class="hero__badge hero__badge--c">Progreso</span>
@@ -107,13 +114,12 @@
       <div class="problem__inner">
         <p class="eyebrow eyebrow--light"><span class="rule"></span>El problema</p>
         <h2 class="heading heading--light">Entrenar más no siempre significa <em>progresar.</em></h2>
+        <p class="problem__lead">Sin un plan ni un registro, cada sesión parte de cero y es difícil saber qué cambiar.</p>
         <ul class="problem__list">
           <li>Rutinas copiadas</li>
-          <li>Ejercicios sin un propósito</li>
           <li>Cambiar de programa cada mes</li>
           <li>No anotar tus cargas</li>
           <li>No saber si estás avanzando</li>
-          <li>Entrenar mucho sin rumbo</li>
         </ul>
         <p class="problem__close">NL Training nace para <em>quitar esa incertidumbre.</em></p>
       </div>
@@ -164,14 +170,13 @@
           </div>
         </div>
         <ol class="steps">
-          <li class="step" tabindex="0"><span class="step__n">01</span><span class="step__body"><b>Conocerte</b><i>Objetivos · Experiencia · Contexto</i></span></li>
-          <li class="step" tabindex="0"><span class="step__n">02</span><span class="step__body"><b>Evaluarte</b><i>Movimiento · Fuerza · Técnica</i></span></li>
-          <li class="step" tabindex="0"><span class="step__n">03</span><span class="step__body"><b>Planificar</b><i>Ejercicios · Cargas · Progresiones</i></span></li>
-          <li class="step" tabindex="0"><span class="step__n">04</span><span class="step__body"><b>Entrenar</b><i>Técnica · Acompañamiento · Educación</i></span></li>
-          <li class="step" tabindex="0"><span class="step__n">05</span><span class="step__body"><b>Ajustar</b><i>Datos · Progreso · Decisiones</i></span></li>
+          <li class="step" tabindex="0"><span class="step__n">01</span><span class="step__body"><b>Conocerte</b><i>Objetivos · Experiencia · Contexto</i><span class="step__desc">Antes de cualquier ejercicio, conversamos: qué buscas, tu experiencia y tu tiempo.</span></span></li>
+          <li class="step" tabindex="0"><span class="step__n">02</span><span class="step__body"><b>Evaluarte</b><i>Movimiento · Fuerza · Técnica</i><span class="step__desc">Vemos cómo te mueves, tu fuerza y tu técnica. Partimos de lo que vemos, no de suposiciones.</span></span></li>
+          <li class="step" tabindex="0"><span class="step__n">03</span><span class="step__body"><b>Planificar</b><i>Ejercicios · Cargas · Progresiones</i><span class="step__desc">Tu programa: ejercicios, cargas y progresiones, todo en tu app.</span></span></li>
+          <li class="step" tabindex="0"><span class="step__n">04</span><span class="step__body"><b>Entrenar</b><i>Técnica · Acompañamiento · Educación</i><span class="step__desc">No te doy una rutina: te enseño la técnica y el porqué de cada ejercicio.</span></span></li>
+          <li class="step" tabindex="0"><span class="step__n">05</span><span class="step__body"><b>Ajustar</b><i>Datos · Progreso · Decisiones</i><span class="step__desc">Con lo que registras decidimos qué cambiar. Y el ciclo vuelve a empezar.</span></span></li>
         </ol>
       </div>
-      <p class="method__quote">No te doy una rutina. <em>Te enseño a entrenar.</em></p>
     </section>
 
     <!-- RESULTADOS: segunda fase, cuando haya testimonios reales -->
@@ -182,31 +187,31 @@
       <h2 class="heading">Tres formas de <em>entrenar conmigo.</em></h2>
       <div class="paths">
         <article class="path">
-          <header class="path__head"><span class="path__num">01</span><h3 class="path__title">Entrenamiento <em>personal</em></h3><span class="path__where">Presencial · Santiago</span></header>
+          <header class="path__head"><span class="path__num">01</span><h3 class="path__title">Entrenamiento <em>personal</em></h3><span class="path__where">Presencial · Smart Fit Portugal, Santiago</span></header>
           <dl class="path__rows">
             <div><dt>Para</dt><dd>Quienes quieren aprender a entrenar acompañados.</dd></div>
             <div><dt>Resuelve</dt><dd>No saber si lo estás haciendo bien.</dd></div>
-            <div><dt>Recibes</dt><dd>Sesiones 1:1 de técnica, fuerza y progresión, y tu plan en la app.</dd></div>
+            <div><dt>Incluye</dt><dd>Sesiones 1:1 de técnica, fuerza y progresión, y tu plan en la app NL Training.</dd></div>
           </dl>
-          <a class="path__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20vi%20NL%20Training%20y%20me%20interesa%20conocer%20el%20entrenamiento%20presencial." target="_blank" rel="noopener" data-ev="wa_presencial">Quiero entrenar presencial <span aria-hidden="true">→</span></a>
+          <a class="path__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20vi%20NL%20Training%20y%20me%20interesa%20conocer%20el%20entrenamiento%20presencial." target="_blank" rel="noopener" data-ev="wa_presencial"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.6 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.6 2 2.6 2.5.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.4 0 .5-.1 1.1-.6 1.5-.5.4-1.2.6-1.9.5-1-.1-2.6-.7-4-2.1-1.6-1.5-2.3-3.2-2.4-4.1 0-.8.3-1.5.4-1.7Z" fill="currentColor"/></svg><span>Quiero entrenar presencial</span></a>
         </article>
         <article class="path path--dark">
           <header class="path__head"><span class="path__num">02</span><h3 class="path__title">Entrenamiento <em>online</em></h3><span class="path__where">Desde cualquier lugar</span></header>
           <dl class="path__rows">
             <div><dt>Para</dt><dd>Quienes quieren un plan personalizado sin depender de estar conmigo en la sala.</dd></div>
             <div><dt>Resuelve</dt><dd>Entrenar solo sin saber si avanzas.</dd></div>
-            <div><dt>Recibes</dt><dd>Planificación · App NL Training · Registro · Seguimiento y ajustes · Comunicación directa</dd></div>
+            <div><dt>Incluye</dt><dd>Planificación, app NL Training, registro de cada sesión, seguimiento y ajustes, y comunicación directa conmigo.</dd></div>
           </dl>
-          <a class="path__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20vi%20NL%20Training%20y%20me%20interesa%20conocer%20el%20entrenamiento%20online." target="_blank" rel="noopener" data-ev="wa_online">Conocer entrenamiento online <span aria-hidden="true">→</span></a>
+          <a class="path__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20vi%20NL%20Training%20y%20me%20interesa%20conocer%20el%20entrenamiento%20online." target="_blank" rel="noopener" data-ev="wa_online"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.6 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.6 2 2.6 2.5.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.4 0 .5-.1 1.1-.6 1.5-.5.4-1.2.6-1.9.5-1-.1-2.6-.7-4-2.1-1.6-1.5-2.3-3.2-2.4-4.1 0-.8.3-1.5.4-1.7Z" fill="currentColor"/></svg><span>Consultar por el online</span></a>
         </article>
         <article class="path">
           <header class="path__head"><span class="path__num">03</span><h3 class="path__title"><em>Programación</em></h3><span class="path__where">Para quienes ya entrenan</span></header>
           <dl class="path__rows">
             <div><dt>Para</dt><dd>Quienes ya entrenan, pero sienten que están improvisando.</dd></div>
             <div><dt>Resuelve</dt><dd>Cambiar de rutina sin avanzar.</dd></div>
-            <div><dt>Recibes</dt><dd>Un programa adaptado a tu objetivo, tu experiencia y tu tiempo.</dd></div>
+            <div><dt>Incluye</dt><dd>Un programa adaptado a tu objetivo, tu experiencia y tu tiempo.</dd></div>
           </dl>
-          <a class="path__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20vi%20NL%20Training%20y%20me%20interesa%20conocer%20la%20programaci%C3%B3n." target="_blank" rel="noopener" data-ev="wa_programacion">Ver programación <span aria-hidden="true">→</span></a>
+          <a class="path__cta" href="https://wa.me/56978354063?text=Hola%20Nicol%C3%A1s%2C%20vi%20NL%20Training%20y%20me%20interesa%20conocer%20la%20programaci%C3%B3n." target="_blank" rel="noopener" data-ev="wa_programacion"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.6 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.9 1.6 2 2.6 2.5.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.4 0 .5-.1 1.1-.6 1.5-.5.4-1.2.6-1.9.5-1-.1-2.6-.7-4-2.1-1.6-1.5-2.3-3.2-2.4-4.1 0-.8.3-1.5.4-1.7Z" fill="currentColor"/></svg><span>Consultar por programación</span></a>
         </article>
       </div>
     </section>
@@ -288,15 +293,14 @@
       <p class="eyebrow"><span class="rule"></span>Preguntas frecuentes</p>
       <h2 class="heading">Antes de <em>partir.</em></h2>
       <div class="faq__list">
-        <details><summary>¿Dónde entrenas presencialmente?</summary><p>En gimnasios Smart Fit de Santiago. Mis clases son en Smart Fit Portugal. <a href="https://www.google.com/maps/search/?api=1&amp;query=Smart+Fit+Portugal+Santiago" target="_blank" rel="noopener">Cómo llegar →</a></p></details>
+        <details><summary>¿Cuánto cuesta?</summary><p>Depende del servicio y la frecuencia. Escríbeme por WhatsApp y te cuento los valores.</p></details>
+        <details><summary>¿Dónde entrenas presencialmente?</summary><p>En gimnasios Smart Fit de Santiago. Mis clases son en Smart Fit Portugal. <a href="https://www.google.com/maps/search/?api=1&amp;query=Smart+Fit+Portugal+Santiago" target="_blank" rel="noopener" data-ev="mapa">Cómo llegar →</a></p></details>
         <details><summary>¿Necesito experiencia? ¿Puedo partir desde cero?</summary><p>No necesitas experiencia. Partimos desde donde estás: primero te conozco y te evalúo, y el plan se arma sobre eso.</p></details>
         <details><summary>¿Cómo funciona el entrenamiento online?</summary><p>Te armo un programa personalizado en la app NL Training. Registras cada sesión, yo reviso lo que haces y ajusto tu plan.</p></details>
-        <details><summary>¿Qué incluye el seguimiento?</summary><p>Reviso cada sesión que registras en la app y te dejo indicaciones para la próxima.</p></details>
+        <details><summary>¿Cómo es el seguimiento?</summary><p>Reviso cada sesión que registras en la app (cargas, repeticiones y constancia) y te dejo indicaciones para la próxima. Si algo no avanza, cambiamos el plan.</p></details>
+        <details><summary>¿La app está incluida?</summary><p>Sí, en el entrenamiento personal y en el online. Funciona desde el celular, sin descargar nada.</p></details>
         <details><summary>¿Tengo que entrenar todos los días?</summary><p>No. La frecuencia se define según tu objetivo, tu tiempo y tu experiencia.</p></details>
-        <details><summary>¿Cómo se hacen los ajustes?</summary><p>Con lo que registras: cargas, repeticiones y constancia. Si algo no avanza, cambiamos el plan.</p></details>
-        <details><summary>¿La app está incluida?</summary><p>Sí, en el entrenamiento personal y en el online.</p></details>
         <details><summary>¿Puedo contratar solo programación?</summary><p>Sí. Es para quienes ya entrenan y quieren un programa hecho para su objetivo.</p></details>
-        <details><summary>¿Cuánto cuesta?</summary><p>Depende del servicio y la frecuencia. Escríbeme por WhatsApp y te cuento los valores.</p></details>
       </div>
     </section>
 
@@ -372,6 +376,7 @@
       const pastHero = hero.getBoundingClientRect().bottom < innerHeight * 0.3;
       const atContact = contact.getBoundingClientRect().top < innerHeight * 0.85;
       wa.classList.toggle('is-shown', pastHero && !atContact);
+      document.body.classList.toggle('wa-on', pastHero && !atContact);
     };
     addEventListener('scroll', updateWa, { passive: true });
     updateWa();
