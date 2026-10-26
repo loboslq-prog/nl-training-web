@@ -142,7 +142,7 @@ em { font-style: italic; color: var(--stone); }
   animation: pop .8s var(--ease) both, float 6s ease-in-out infinite;
 }
 .hero__badge--a { left: -4%; top: 22%; animation-delay: 1.4s, 2.2s; }
-.hero__badge--b { right: -2%; top: 48%; animation-delay: 1.7s, 3s; }
+.hero__badge--b { right: -3%; top: 70%; animation-delay: 1.7s, 3s; }
 .hero__badge--c { left: 12%; bottom: 4%; animation-delay: 2s, 3.8s; }
 
 /* ---------- Problema ---------- */
@@ -227,6 +227,7 @@ em { font-style: italic; color: var(--stone); }
 .path__num { display: block; font-size: 12px; letter-spacing: .3em; color: var(--stone); margin-bottom: 28px; }
 .path__title { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 2.6vw, 34px); line-height: 1.1; }
 .path__where { display: block; margin-top: 10px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--stone); }
+.path__lead { margin-top: 22px; font-family: var(--serif); font-size: clamp(20px, 2vw, 24px); line-height: 1.25; }
 .path__rows { margin: 26px 0 30px; }
 .path__rows div { padding: 14px 0; border-top: 1px solid var(--line); }
 .path__rows dt { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--stone); margin-bottom: 4px; }
@@ -235,7 +236,7 @@ em { font-style: italic; color: var(--stone); }
 .path__cta:hover { background: var(--ink); color: var(--paper); }
 .wa-ico { width: 17px; height: 17px; flex: none; }
 .path--dark { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.path--dark em { color: var(--concrete); }
+.path--dark em, .path--dark .path__lead em { color: var(--concrete); }
 .path--dark .path__where, .path--dark .path__num, .path--dark .path__rows dt { color: var(--concrete); }
 .path--dark .path__rows div { border-color: var(--line-dark); }
 .path--dark .path__rows dd { color: #d9d4cc; }
